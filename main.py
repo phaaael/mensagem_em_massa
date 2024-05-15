@@ -19,7 +19,7 @@ mensagem = ler_mensagem(arquivo_mensagem)
 
 def enviar_mensagem(contatos, mensagem):
     for contato in contatos:
-        kit.sendwhatmsg(contato, mensagem, time.localtime().tm_hour, time.localtime().tm_min + 1, tab_close=True)
+        kit.sendwhatmsg(contato, mensagem, time.localtime().tm_hour, time.localtime().tm_min + 1, tab_close=False)
         time.sleep(20)
 
 enviar_mensagem(contatos, mensagem)
