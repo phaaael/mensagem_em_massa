@@ -1,4 +1,5 @@
 import pywhatkit as kit
+
 import time
 import pyautogui
 
@@ -21,8 +22,11 @@ def enviar_mensagem(contato, mensagem):
         contato = '+55' + contato
 
     try:
-        kit.sendwhatmsg_instantly(contato, mensagem, wait_time=10, tab_close=False)
-        time.sleep(10)
+        kit.sendwhatmsg_instantly(contato, mensagem, wait_time=20, tab_close=False)
+        time.sleep(5)
+        pyautogui.press('enter')
+        time.sleep(5)
+        pyautogui.hotkey('ctrl', 'w')
         pyautogui.press('enter')
         log_msg = f'Mensagem enviada para {contato}'
         escrever_log(log_msg)
